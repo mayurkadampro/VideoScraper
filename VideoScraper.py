@@ -54,6 +54,14 @@ class VideoScraper:
         # Parsing From Single Span Elements
         video_details["thumbnail"] = soup.find("span", itemprop="thumbnail").find('link')['href']
 
+        # alternate way to get thumbnail 
+        video_details["thumbnailMax"] = "https://i.ytimg.com/vi/"+video_details["videoId"]+"/maxresdefault.jpg"
+        video_details["thumbnailStandard"] = "https://i.ytimg.com/vi/"+video_details["videoId"]+"/sddefault.jpg"
+        video_details["thumbnailDefault"] = "https://i.ytimg.com/vi/"+video_details["videoId"]+"/default.jpg"
+        video_details["thumbnailHigh"] = "https://i.ytimg.com/vi/"+video_details["videoId"]+"/hqdefault.jpg"
+        video_details["thumbnailMedium"] = "https://i.ytimg.com/vi/"+video_details["videoId"]+"/mqdefault.jpg"
+        
+
         # Channel Url Common For All Except Channel ID
         video_details["channelUrl"] = "https://www.youtube.com/channel/"+video_details["channelId"]
         
