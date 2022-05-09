@@ -71,7 +71,7 @@ class VideoScraper:
         
         likeAndDislike = soup(text=lambda t: '''"iconType":"LIKE"''' in t)
         video_details["likes"] = str(likeAndDislike)[str(likeAndDislike).index('''"iconType":"LIKE"'''):str(likeAndDislike).index('''likes''')].split('''"''')[-1].strip()
-        video_details["dislikes"] = str(likeAndDislike)[str(likeAndDislike).index('''"iconType":"DISLIKE"'''):str(likeAndDislike).index('''dislikes''')].split('''"''')[-1].strip()
+        # video_details["dislikes"] = str(likeAndDislike)[str(likeAndDislike).index('''"iconType":"DISLIKE"'''):str(likeAndDislike).index('''dislikes''')].split('''"''')[-1].strip()
         
         videoLength = soup(text=lambda t: '''"lengthSeconds"''' in t)
         start = str(videoLength).find("lengthSeconds")
